@@ -1,0 +1,43 @@
+/* ---------- Hide scrollbars everywhere, keep scrolling ---------- */
+html, body, * {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* old Edge/IE */
+}
+*::-webkit-scrollbar { display: none; width: 0; height: 0; } /* Chrome/Safari/newer Edge */
+
+/* ---------- Extra phone / tablet fit, on top of each component's own breakpoints ---------- */
+html { -webkit-text-size-adjust: 100%; }
+img, svg, canvas { max-width: 100%; }
+
+@media (max-width: 900px) {
+  .page-header { flex-direction: column; align-items: stretch; }
+  .page-actions { flex-wrap: wrap; }
+  .toolbar { padding: 12px 14px; }
+}
+
+@media (max-width: 680px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid, .chart-grid { grid-template-columns: 1fr; }
+  .chart-grid > .span-5, .chart-grid > .span-7, .chart-grid > .span-12 { grid-column: span 1; }
+  .modal { max-width: calc(100vw - 24px) !important; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .searchbar { max-width: none; }
+  .filterbar { flex-wrap: wrap; }
+  .user-meta { display: none; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .topbar-search { max-width: none; }
+}
+
+@media (max-width: 430px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .app-content { padding: 14px 10px 28px; }
+  .card-body { padding: 14px; }
+  .pagination { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .siem-panel { grid-template-columns: 1fr; }
+}
+
+/* iPhone/iPad notch & home-indicator safe areas */
+@supports (padding: max(0px)) {
+  .app-content { padding-left: max(14px, env(safe-area-inset-left)); padding-right: max(14px, env(safe-area-inset-right)); }
+  .topbar { padding-left: max(14px, env(safe-area-inset-left)); padding-right: max(14px, env(safe-area-inset-right)); }
+}

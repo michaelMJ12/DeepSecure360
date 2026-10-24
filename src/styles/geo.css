@@ -1,0 +1,8 @@
+.geo-form { display: flex; gap: 12px; align-items: flex-end; }
+.geo-form .field { flex: 1; }
+.geo-save { display: flex; gap: 12px; align-items: flex-end; margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.geo-save .field { flex: 1; }
+.geo-map { position: relative; border-radius: 0 0 var(--radius-lg) var(--radius-lg); overflow: hidden; background: linear-gradient(160deg, #061018, #081a24 60%, #06131c); }
+.geo-map canvas { display: block; }
+.geo-map-badge { position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; font-size: 11.5px; color: #bfe6fa; background: rgba(4, 10, 20, 0.75); border: 1px solid rgba(56, 189, 248, 0.3); }
+@media (max-width: 560px) { .geo-form, .geo-save { flex-direction: column; align-items: stretch; } }

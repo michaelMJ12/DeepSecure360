@@ -1,0 +1,103 @@
+/* Design tokens. Change colours, spacing and type here; everything else reads from these. */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #050b16;
+  --ink-2: #0f1b2d;
+  --ink-text: #93a4bd;
+  --paper: #0a1120;
+  --surface: #0f1829;
+  --surface-raised: #141f35;
+  --line: #1f2c45;
+  --line-strong: #2c3c5c;
+  --text: #e5ebf5;
+  --muted: #8292ab;
+
+  --primary: #14b8a6;
+  --primary-hover: #0d9488;
+  --primary-soft: rgba(20, 184, 166, 0.16);
+  --signal: #f2b33d;
+
+  --danger: #fb7185;
+  --danger-soft: rgba(251, 113, 133, 0.14);
+  --success: #34d399;
+  --success-soft: rgba(52, 211, 153, 0.14);
+  --warning: #fbbf24;
+  --warning-soft: rgba(251, 191, 36, 0.14);
+  --info: #38bdf8;
+  --info-soft: rgba(56, 189, 248, 0.14);
+  --critical: #f43f5e;
+  --critical-soft: rgba(244, 63, 94, 0.22);
+
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-pop: 0 16px 40px rgba(0, 0, 0, 0.55);
+
+  --font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 68px;
+  --topbar-h: 60px;
+}
+
+
+[data-theme="light"] {
+  color-scheme: light;
+  --ink: #0f1b2d;
+  --ink-2: #172a45;
+  --ink-text: #b8c4d6;
+  --paper: #f4f6f9;
+  --surface: #ffffff;
+  --surface-raised: #f8fafc;
+  --line: #dde3ea;
+  --line-strong: #c3ccd8;
+  --text: #1a2433;
+  --muted: #5c6b7f;
+
+  --primary: #0b6e6e;
+  --primary-hover: #095858;
+  --primary-soft: #e0f0ef;
+  --signal: #e3a82b;
+
+  --danger: #c2362b;
+  --danger-soft: #fbe9e7;
+  --success: #1f7a4d;
+  --success-soft: #e3f3ea;
+  --warning: #9a6310;
+  --warning-soft: #fcf1d9;
+  --info: #2563a8;
+  --info-soft: #e5eefa;
+  --critical: #7b1e3a;
+  --critical-soft: #f6e3ea;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 2px rgba(15, 27, 45, 0.06);
+  --shadow-pop: 0 12px 32px rgba(15, 27, 45, 0.22);
+}
+
+[data-theme="light"] body::before { opacity: 0.4; }
+[data-theme="light"] .input::placeholder { color: #8795a8; }
+[data-theme="light"] .input:hover:not(:disabled) { border-color: #9aa8bb; }
+[data-theme="light"] .badge-neutral { background: #e8ecf1; color: #3d4a5c; }
+[data-theme="light"] .table th { background: #f8fafc; }
+[data-theme="light"] .table tbody tr:hover { background: #f8fafc; }
+[data-theme="light"] .skeleton { background: linear-gradient(90deg, #e8ecf1, #f3f5f8, #e8ecf1); background-size: 200% 100%; }
+[data-theme="light"] .select,
+[data-theme="light"] .filter-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6b7f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: var(--font); font-size: 14px; line-height: 1.5; color: var(--text); background: var(--paper); -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; background: radial-gradient(900px 500px at 85% -10%, rgba(20, 184, 166, 0.08), transparent 60%), radial-gradient(700px 420px at -10% 110%, rgba(56, 189, 248, 0.06), transparent 60%); }
+h1, h2, h3, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--primary); }
+.mono { font-family: var(--mono); font-size: 12.5px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
