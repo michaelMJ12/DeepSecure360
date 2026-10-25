@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Alert } from '@/components/ui/Alert';
-import { Badge } from '@/components/ui/Badge';
+import { Badge, StatusBadge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { Spinner } from '@/components/ui/Spinner';
 import { StatCard } from '@/components/ui/StatCard';
@@ -32,6 +32,21 @@ const UNIT_NOTE: Record<TimeUnit, string> = {
   minute: 'Last 30 minutes',
   second: 'Last 30 seconds',
 };
+
+function Bars({ data }: { data: Record<string, number> }) {
+  const max = Math.max(1, ...Object.values(data));
+  return (
+    <ul className="bars">
+      {Object.entries(data).map(([k, v]) => (
+        <li key={k}>
+          <span className="bars-label"><StatusBadge value={k} /></span>
+          <span className="bars-track"><span className="bars-fill" style={{ width: `${(v / max) * 100}%` }} /></span>
+          <span className="bars-value">{v}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function DashboardPage() {
   const [m, setM] = useState<DashboardMetrics | null>(null);
@@ -125,6 +140,11 @@ export default function DashboardPage() {
                 </table>
               </div>
             </Card>
+          </div>
+
+          <div className="dash-grid">
+            <Card title="Cases by severity"><Bars data={m.casesBySeverity} /></Card>
+            <Card title="Cases by status"><Bars data={m.casesByStatus} /></Card>
           </div>
         </>
       )}

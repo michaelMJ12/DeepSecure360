@@ -12,7 +12,10 @@ export interface NavGroup {
 }
 
 export const NAVIGATION: NavGroup[] = [
-  { title: 'Overview', items: [{ label: 'Dashboard', path: '/', icon: 'dashboard' }] },
+  { title: 'Overview', items: [
+    { label: 'Dashboard', path: '/', icon: 'dashboard' },
+    { label: 'SOC Overview', path: '/soc/overview', icon: 'dashboard' },
+  ] },
   {
     title: 'Investigations',
     items: [
@@ -27,8 +30,7 @@ export const NAVIGATION: NavGroup[] = [
   {
     title: 'SOC Operations',
     items: [
-      { label: 'Overview', path: '/soc/overview', icon: 'dashboard' },
-      { label: 'Real-Time Monitor', path: '/soc/real-time-monitor', icon: 'dashboard' },
+      { label: 'Real-Time Monitor', path: '/soc/real-time-monitor', icon: 'monitor' },
       { label: 'SIEM Search', path: '/soc/siem-search', icon: 'search' },
       { label: 'Alerts', path: '/soc/alerts', icon: 'alert' },
       { label: 'Incidents', path: '/soc/incidents', icon: 'alertCircle' },
