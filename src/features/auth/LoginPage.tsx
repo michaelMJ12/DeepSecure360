@@ -22,10 +22,10 @@ export default function LoginPage() {
       <div className="login-panel">
         <span className="brand-mark brand-mark-lg"><Icon name="shield" size={26} /></span>
         <h1>Sign in to DeepSecure360</h1>
-        <p className="login-sub">Admin console for cases, evidence and analysis.</p>
+        {/* <p className="login-sub">Admin console for cases, evidence and analysis.</p>
         {USE_MOCK && (
           <Alert variant="info" title="Demo mode">Backend not connected. Use any email and a password of 6+ characters.</Alert>
-        )}
+        )} */}
         <DynamicForm schema={schema} submitLabel="Sign in" onSubmit={(v) => login(String(v.email), String(v.password))} />
       </div>
     </div>
