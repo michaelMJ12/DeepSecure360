@@ -79,11 +79,11 @@ export default function IpIntelligencePage() {
     <>
       <PageHeader title="IP Intelligence" description="City-level geolocation lookups for an IP seen in a case or alert." />
 
-      <Alert variant="info" title="What this shows — and doesn't" className="form-alert">
+      {/* <Alert variant="info" title="What this shows — and doesn't" className="form-alert">
         City, region, country, network owner and timezone, accurate to roughly the radius shown on the map — this is
         how IP geolocation actually works. It cannot resolve a street address, a live device position, a photo of
         whoever is using the IP, or their social media activity, because an IP address doesn't carry that information.
-      </Alert>
+      </Alert> */}
 
       <div className="chart-grid">
         <Card className="span-5" title="Look up an IP">
